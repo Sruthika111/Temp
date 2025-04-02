@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temp 9</title>
+    <script>
+        function showData(){
+            let email=document.getElementById("email").value;
+            let password=document.getElementById("password").value;
+            data.innerHTML=`${email}-${password}`
+        }
+    </script>
+</head>
+<body>
+    <h1>Login Form</h1>
+    <p><input type="email" id="email" placeholder="Enter Email Address"></p>
+    <p><input type="password" id="password" placeholder="Enter Password"></p>
+    <button onclick="showData()">Log In</button>
+    <hr/>
+    <div id="data"></div>
+</body>
+</html>

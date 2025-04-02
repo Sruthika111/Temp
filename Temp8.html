@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temp 8</title>
+    <style>
+        .container{
+            display: flex;
+            padding: 100px;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            padding: 100px;
+            width:300px;
+            border-radius: 50px;
+            background-color: wheat;
+            text-align: center;
+        }
+    </style>
+    <script>
+        let users=[];
+        function showData(){
+            let name=document.getElementById("name").value;
+            let email=document.getElementById("email").value;
+            let password=document.getElementById("password").value;
+            let dob=document.getElementById("dob").value;
+            let user={
+                name:name,
+                email:email,
+                password:password,
+                dob:dob,
+            };
+            users.push(user);
+            console.log(users);
+            let l=users.length;
+            let str=" ";
+            for(let i=0;i<l;i++){
+                str=str+`<li>${users[i].name}-${users[i].email}-${users[i].password}-${users[i].dob}</li>`;
+            }
+            data.innerHTML=str;
+        }
+    </script>
+</head>
+<body>
+    <h2>New User Registration Form</h2>
+    <div class="container">
+        <div class="box">
+        <p><input type="text" id="name"placeholder="Enter Name"></p>
+        <p><input type="email" id="email" placeholder="Enter Email Address"></p>
+        <p><input type="password" id="password" placeholder="Enter Password"></p>
+        <p><input type="date" id="dob"></p>
+        <button onclick="showData()">Register</button>
+        </div>
+    </div>
+    <hr>
+    <div id="data"></div>
+</body>
+</html>
