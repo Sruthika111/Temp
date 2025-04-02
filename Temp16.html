@@ -4,8 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Temp 16</title>
+    <script>
+        function calc(){
+            let x=parseFloat(document.getElementById("x").value)
+            let y=parseFloat(document.getElementById("y").value)
+            let add=x+y;
+            let sub=x-y;
+            let mul=x*y;
+            let div=x/y;
+            let rem=x%y;
+            document.getElementById("d").innerHTML=
+            `
+                <p>Addition: ${add}</p>
+                <p>Subtraction: ${sub}</p>
+                <p>Multiplication: ${mul}</p>
+                <p>Division: ${div}</p>
+                <p>Remainder:${rem}</p>
+            `;
+        }
+    </script>
 </head>
 <body>
-    
+    <h3>Simple Calculator</h3>
+    <p><input type="number" id="x" placeholder="Enter number"></p>
+    <p><input type="number" id="y" placeholder="Enter number"></p>
+    <button onclick="calc()">Submit</button>
+    <h4>Results:</h4>
+    <div id="d"></div>
 </body>
 </html>

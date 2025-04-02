@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+</head>
+<body>
+    <h2>Game Points:<span id="score">0</span></h2>
+    <img src="images/ball.png" width="100px" id="ball" />
+    <img src="images/bucket.jpg" width="100px" id="bucket" />
+    <script>
+        bucket.style.position="absolute";
+        ball.style.position="absolute";
+        let b=document.body;
+        let left=0;
+        let down=400;
+        bucket.style.left=left+"px";
+        bucket.style.top=down+"px";
+        b.onkeydown = (e) => {
+        if (e.key == "ArrowRight") left += 5;
+        if (e.key == "ArrowDown") down += 5;
+        if (e.key == "ArrowLeft") left -= 5;
+        if (e.key == "ArrowUp") down -= 5;
+        bucket.style.left = left + "px";
+        bucket.style.top = down + "px";
+      };
+      let t = 0;
+      let l = 0;
+      let gamept = 0; 
+
+      function ballFall() {
+        t++;
+        if (t > 400) {
+          if (Math.abs(l - left) < 25 && Math.abs(t - down) < 25) {
+            gamept++;
+            document.getElementById("score").innerText = gamept; 
+          }
+          t = 1;
+          l = Math.random() * 500;
+        }
+        ball.style.top = t + "px";
+        ball.style.left = l + "px";
+        setTimeout(ballFall, 10);
+    }
+    ballFall();
+    </script>
+</body>
+</html>
